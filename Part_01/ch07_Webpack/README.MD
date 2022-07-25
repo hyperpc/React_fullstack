@@ -143,4 +143,4 @@ Webpack官方和SemanticUI官方，在新的release版本都没有解决这一�
 
 解决方案：  
 通过public/index.html引入semantic.min.css样式文件，  
-不要再src/App.js等文件中引入该样式文件  
+不要在src/App.js等文件中引入该样式文件  

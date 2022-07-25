@@ -1,0 +1,36 @@
+{
+  "name": "bookstore-server",
+  "version": "1.0.0",
+  "description": "This is the API side of book store app in GraphQL server. ",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "bookstore",
+    "api",
+    "express",
+    "graphql",
+    "server",
+    "sqlite",
+    "sequelize",
+    "babel"
+  ],
+  "author": "Robert Hou",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/register": "^7.18.6",
+    "@graphql-tools/schema": "^8.5.0",
+    "apollo-server-core": "^3.10.0",
+    "apollo-server-express": "^3.10.0",
+    "babel-preset-env": "^7.0.0-beta.3",
+    "express": "^4.18.1",
+    "graphql": "^16.5.0",
+    "graphql-ws": "^5.9.1",
+    "sequelize": "^6.21.3",
+    "sqlite3": "^5.0.9",
+    "ws": "^8.8.0"
+  }
+}

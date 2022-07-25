@@ -1,0 +1,236 @@
+Executing (default): SELECT 1+1 AS result
+>> Connection has been established successfully.
+>> Author.findOne(1)
+Executing (default): SELECT `author_id`, `name`, `bio`, `avatarUrl`, `createdAt`, `updatedAt`, `deletedAt` FROM `authors` AS `Author` WHERE (`Author`.`deletedAt` IS NULL AND `Author`.`name` = 'Ari Lerner') LIMIT 1;
+{"author_id":"50416b91-65bb-4897-b248-7be2c3129549","name":"Ari Lerner","bio":"Ari bio","avatarUrl":"./public/images/faces/ari-lerner.png","createdAt":"2022-07-22T07:33:03.666Z","updatedAt":"2022-07-22T07:33:03.666Z","deletedAt":null}
+{
+  author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+  name: 'Ari Lerner',
+  bio: 'Ari bio',
+  avatarUrl: './public/images/faces/ari-lerner.png',
+  createdAt: 2022-07-22T07:33:03.666Z,
+  updatedAt: 2022-07-22T07:33:03.666Z,
+  deletedAt: null
+}
+Ari Lerner
+>> Author.findAll()
+Executing (default): SELECT `author_id`, `name`, `bio`, `avatarUrl`, `createdAt`, `updatedAt`, `deletedAt` FROM `authors` AS `Author` WHERE (`Author`.`deletedAt` IS NULL);
+{
+  author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+  name: 'Ari Lerner',
+  bio: 'Ari bio',
+  avatarUrl: './public/images/faces/ari-lerner.png',
+  createdAt: 2022-07-22T07:33:03.666Z,
+  updatedAt: 2022-07-22T07:33:03.666Z,
+  deletedAt: null
+}
+Ari Lerner
+{
+  author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+  name: 'Nate Murray',
+  bio: 'Nate bio',
+  avatarUrl: './public/images/faces/nate-murray.png',
+  createdAt: 2022-07-22T07:33:03.689Z,
+  updatedAt: 2022-07-22T07:33:03.689Z,
+  deletedAt: null
+}
+Nate Murray
+{
+  author_id: '5f4bb49b-7d91-4d2d-a757-5a448a84a7d8',
+  name: 'Felipe Coury',
+  bio: '',
+  avatarUrl: './public/images/faces/felipe.png',
+  createdAt: 2022-07-22T07:33:03.711Z,
+  updatedAt: 2022-07-22T07:33:03.711Z,
+  deletedAt: null
+}
+Felipe Coury
+{
+  author_id: '62c2e6b5-26d9-4ada-891f-e95ab59346ba',
+  name: 'Carlos Tabourda',
+  bio: '',
+  avatarUrl: './public/images/faces/carlos.png',
+  createdAt: 2022-07-22T07:33:03.729Z,
+  updatedAt: 2022-07-22T07:33:03.729Z,
+  deletedAt: null
+}
+Carlos Tabourda
+{
+  author_id: '6195cab5-3964-49ce-b7ef-ef48a180dd7c',
+  name: 'Anthony Accomazzo',
+  bio: '',
+  avatarUrl: './public/images/faces/anthony-accomazzo.png',
+  createdAt: 2022-07-22T07:33:03.748Z,
+  updatedAt: 2022-07-22T07:33:03.748Z,
+  deletedAt: null
+}
+Anthony Accomazzo
+{
+  author_id: '32b2eca7-6f1e-4ba5-b99e-f2e5bbb80ae0',
+  name: 'Clay Allsopp',
+  bio: '',
+  avatarUrl: './public/images/faces/clay-allsopp.png',
+  createdAt: 2022-07-22T07:33:03.769Z,
+  updatedAt: 2022-07-22T07:33:03.769Z,
+  deletedAt: null
+}
+Clay Allsopp
+{
+  author_id: 'fb6c4dce-c58e-405b-ace0-718efab1b6a7',
+  name: 'David Guttman',
+  bio: '',
+  avatarUrl: './public/images/faces/david-guttman.png',
+  createdAt: 2022-07-22T07:33:03.788Z,
+  updatedAt: 2022-07-22T07:33:03.788Z,
+  deletedAt: null
+}
+David Guttman
+{
+  author_id: '7dbdacee-0bf3-4f10-9364-55c77c322dce',
+  name: 'Tyler McGinnis',
+  bio: '',
+  avatarUrl: './public/images/faces/tyler-mcginnis.png',
+  createdAt: 2022-07-22T07:33:03.807Z,
+  updatedAt: 2022-07-22T07:33:03.807Z,
+  deletedAt: null
+}
+Tyler McGinnis
+>> Book.findAll()
+Executing (default): SELECT `book_id`, `name`, `slug`, `tagline`, `coverUrl`, `description`, `createdAt`, `updatedAt`, `deletedAt` FROM `books` AS `Book` WHERE (`Book`.`deletedAt` IS NULL);
+{
+  book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+  name: 'Fullstack React',
+  slug: 'fullstack-react',
+  tagline: 'The Complete Book on ReactJS and Friends',
+  coverUrl: './public/images/books/fullstack_react_book_cover.png',
+  description: 'Build awesome apps in React in record time.',
+  createdAt: 2022-07-22T07:33:03.830Z,
+  updatedAt: 2022-07-22T07:33:03.830Z,
+  deletedAt: null
+}
+Fullstack React
+{
+  book_id: '732c15dc-6629-4266-8b5c-c3f123fb6b52',
+  name: 'ng-book classic',
+  slug: 'ng-book-classic',
+  tagline: 'The Complete Book on AngularJS',
+  coverUrl: './public/images/books/ng_book_1_cover.png',
+  description: 'Learn Angular 1 with this classic book.',
+  createdAt: 2022-07-22T07:33:03.867Z,
+  updatedAt: 2022-07-22T07:33:03.867Z,
+  deletedAt: null
+}
+ng-book classic
+{
+  book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+  name: 'ng-book',
+  slug: 'ng-book',
+  tagline: 'The Complete Book on Angular 2',
+  coverUrl: './public/images/books/ng_book_2_cover.png',
+  description: 'ng-book is the easiest way to learn Angular.',
+  createdAt: 2022-07-22T07:33:03.892Z,
+  updatedAt: 2022-07-22T07:33:03.892Z,
+  deletedAt: null
+}
+ng-book
+>> Authorship.findAll()
+Executing (default): SELECT `authorship_id`, `author_id`, `book_id`, `createdAt`, `updatedAt`, `deletedAt` FROM `authorships` AS `Authorship` WHERE (`Authorship`.`deletedAt` IS NULL);
+{
+  authorship_id: '85957aa0-0990-11ed-8cc5-959a7d01e157',
+  author_id: '6195cab5-3964-49ce-b7ef-ef48a180dd7c',
+  book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+85957aa0-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '85957aa1-0990-11ed-8cc5-959a7d01e157',
+  author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+  book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+85957aa1-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '85957aa2-0990-11ed-8cc5-959a7d01e157',
+  author_id: 'fb6c4dce-c58e-405b-ace0-718efab1b6a7',
+  book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+85957aa2-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595a1b0-0990-11ed-8cc5-959a7d01e157',
+  author_id: '32b2eca7-6f1e-4ba5-b99e-f2e5bbb80ae0',
+  book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595a1b0-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595a1b1-0990-11ed-8cc5-959a7d01e157',
+  author_id: '7dbdacee-0bf3-4f10-9364-55c77c322dce',
+  book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595a1b1-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595a1b2-0990-11ed-8cc5-959a7d01e157',
+  author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+  book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595a1b2-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595a1b3-0990-11ed-8cc5-959a7d01e157',
+  author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+  book_id: '732c15dc-6629-4266-8b5c-c3f123fb6b52',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595a1b3-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595a1b4-0990-11ed-8cc5-959a7d01e157',
+  author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+  book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595a1b4-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595a1b5-0990-11ed-8cc5-959a7d01e157',
+  author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+  book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595a1b5-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595c8c0-0990-11ed-8cc5-959a7d01e157',
+  author_id: '5f4bb49b-7d91-4d2d-a757-5a448a84a7d8',
+  book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595c8c0-0990-11ed-8cc5-959a7d01e157
+{
+  authorship_id: '8595c8c1-0990-11ed-8cc5-959a7d01e157',
+  author_id: '62c2e6b5-26d9-4ada-891f-e95ab59346ba',
+  book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+  createdAt: 2022-07-22T07:33:03.946Z,
+  updatedAt: 2022-07-22T07:33:03.946Z,
+  deletedAt: null
+}
+8595c8c1-0990-11ed-8cc5-959a7d01e157

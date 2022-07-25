@@ -1,0 +1,444 @@
+Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='authors';
+Executing (default): CREATE TABLE IF NOT EXISTS `authors` (`author_id` UUID NOT NULL PRIMARY KEY, `name` VARCHAR(255) NOT NULL, `bio` VARCHAR(255), `avatarUrl` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `deletedAt` DATETIME);
+Executing (default): PRAGMA INDEX_LIST(`authors`)
+Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_authors_1`)
+Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='books';
+Executing (default): CREATE TABLE IF NOT EXISTS `books` (`book_id` UUID NOT NULL PRIMARY KEY, `name` VARCHAR(255) NOT NULL, `slug` VARCHAR(255), `tagline` VARCHAR(255), `coverUrl` VARCHAR(255), `description` VARCHAR(255), `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `deletedAt` DATETIME);
+Executing (default): PRAGMA INDEX_LIST(`books`)
+Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_books_1`)
+Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='authorships';
+Executing (default): CREATE TABLE IF NOT EXISTS `authorships` (`authorship_id` UUID NOT NULL PRIMARY KEY, `author_id` UUID NOT NULL, `book_id` UUID NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `deletedAt` DATETIME, `AuthorAuthorId` UUID REFERENCES `authors` (`author_id`) ON DELETE SET NULL ON UPDATE CASCADE, `BookBookId` UUID REFERENCES `books` (`book_id`) ON DELETE SET NULL ON UPDATE CASCADE);
+Executing (default): PRAGMA INDEX_LIST(`authorships`)
+Executing (default): PRAGMA INDEX_INFO(`sqlite_autoindex_authorships_1`)
+Executing (default): delete from authors;
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Executing (default): INSERT INTO `authors` (`author_id`,`name`,`bio`,`avatarUrl`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6);
+Author.Create : 
+[
+  {
+    author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+    name: 'Ari Lerner',
+    bio: 'Ari bio',
+    avatarUrl: './public/images/faces/ari-lerner.png',
+    updatedAt: 2022-07-22T07:33:03.666Z,
+    createdAt: 2022-07-22T07:33:03.666Z
+  },
+  {
+    author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+    name: 'Nate Murray',
+    bio: 'Nate bio',
+    avatarUrl: './public/images/faces/nate-murray.png',
+    updatedAt: 2022-07-22T07:33:03.689Z,
+    createdAt: 2022-07-22T07:33:03.689Z
+  },
+  {
+    author_id: '5f4bb49b-7d91-4d2d-a757-5a448a84a7d8',
+    name: 'Felipe Coury',
+    bio: '',
+    avatarUrl: './public/images/faces/felipe.png',
+    updatedAt: 2022-07-22T07:33:03.711Z,
+    createdAt: 2022-07-22T07:33:03.711Z
+  },
+  {
+    author_id: '62c2e6b5-26d9-4ada-891f-e95ab59346ba',
+    name: 'Carlos Tabourda',
+    bio: '',
+    avatarUrl: './public/images/faces/carlos.png',
+    updatedAt: 2022-07-22T07:33:03.729Z,
+    createdAt: 2022-07-22T07:33:03.729Z
+  },
+  {
+    author_id: '6195cab5-3964-49ce-b7ef-ef48a180dd7c',
+    name: 'Anthony Accomazzo',
+    bio: '',
+    avatarUrl: './public/images/faces/anthony-accomazzo.png',
+    updatedAt: 2022-07-22T07:33:03.748Z,
+    createdAt: 2022-07-22T07:33:03.748Z
+  },
+  {
+    author_id: '32b2eca7-6f1e-4ba5-b99e-f2e5bbb80ae0',
+    name: 'Clay Allsopp',
+    bio: '',
+    avatarUrl: './public/images/faces/clay-allsopp.png',
+    updatedAt: 2022-07-22T07:33:03.769Z,
+    createdAt: 2022-07-22T07:33:03.769Z
+  },
+  {
+    author_id: 'fb6c4dce-c58e-405b-ace0-718efab1b6a7',
+    name: 'David Guttman',
+    bio: '',
+    avatarUrl: './public/images/faces/david-guttman.png',
+    updatedAt: 2022-07-22T07:33:03.788Z,
+    createdAt: 2022-07-22T07:33:03.788Z
+  },
+  {
+    author_id: '7dbdacee-0bf3-4f10-9364-55c77c322dce',
+    name: 'Tyler McGinnis',
+    bio: '',
+    avatarUrl: './public/images/faces/tyler-mcginnis.png',
+    updatedAt: 2022-07-22T07:33:03.807Z,
+    createdAt: 2022-07-22T07:33:03.807Z
+  }
+]
+Executing (default): select count(*) from authors;
+[{"count(*)":8}]
+Executing (default): delete from books;
+Executing (default): INSERT INTO `books` (`book_id`,`name`,`slug`,`tagline`,`coverUrl`,`description`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);
+Executing (default): INSERT INTO `books` (`book_id`,`name`,`slug`,`tagline`,`coverUrl`,`description`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);
+Executing (default): INSERT INTO `books` (`book_id`,`name`,`slug`,`tagline`,`coverUrl`,`description`,`createdAt`,`updatedAt`) VALUES ($1,$2,$3,$4,$5,$6,$7,$8);
+Book.Create : 
+[
+  {
+    book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+    name: 'Fullstack React',
+    slug: 'fullstack-react',
+    tagline: 'The Complete Book on ReactJS and Friends',
+    coverUrl: './public/images/books/fullstack_react_book_cover.png',
+    description: 'Build awesome apps in React in record time.',
+    updatedAt: 2022-07-22T07:33:03.830Z,
+    createdAt: 2022-07-22T07:33:03.830Z
+  },
+  {
+    book_id: '732c15dc-6629-4266-8b5c-c3f123fb6b52',
+    name: 'ng-book classic',
+    slug: 'ng-book-classic',
+    tagline: 'The Complete Book on AngularJS',
+    coverUrl: './public/images/books/ng_book_1_cover.png',
+    description: 'Learn Angular 1 with this classic book.',
+    updatedAt: 2022-07-22T07:33:03.867Z,
+    createdAt: 2022-07-22T07:33:03.867Z
+  },
+  {
+    book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+    name: 'ng-book',
+    slug: 'ng-book',
+    tagline: 'The Complete Book on Angular 2',
+    coverUrl: './public/images/books/ng_book_2_cover.png',
+    description: 'ng-book is the easiest way to learn Angular.',
+    updatedAt: 2022-07-22T07:33:03.892Z,
+    createdAt: 2022-07-22T07:33:03.892Z
+  }
+]
+Executing (default): select count(*) from books;
+[{"count(*)":3}]
+Executing (default): delete from authorships;
+Executing (default): INSERT INTO `authorships` (`authorship_id`,`author_id`,`book_id`,`createdAt`,`updatedAt`) VALUES ('85957aa0-0990-11ed-8cc5-959a7d01e157','6195cab5-3964-49ce-b7ef-ef48a180dd7c','a6b3a76c-e605-49c1-b76c-aa7ecc645aed','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('85957aa1-0990-11ed-8cc5-959a7d01e157','50416b91-65bb-4897-b248-7be2c3129549','a6b3a76c-e605-49c1-b76c-aa7ecc645aed','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('85957aa2-0990-11ed-8cc5-959a7d01e157','fb6c4dce-c58e-405b-ace0-718efab1b6a7','a6b3a76c-e605-49c1-b76c-aa7ecc645aed','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595a1b0-0990-11ed-8cc5-959a7d01e157','32b2eca7-6f1e-4ba5-b99e-f2e5bbb80ae0','a6b3a76c-e605-49c1-b76c-aa7ecc645aed','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595a1b1-0990-11ed-8cc5-959a7d01e157','7dbdacee-0bf3-4f10-9364-55c77c322dce','a6b3a76c-e605-49c1-b76c-aa7ecc645aed','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595a1b2-0990-11ed-8cc5-959a7d01e157','ddb5edfe-6387-472a-beb8-da57e5ac9fe5','a6b3a76c-e605-49c1-b76c-aa7ecc645aed','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595a1b3-0990-11ed-8cc5-959a7d01e157','50416b91-65bb-4897-b248-7be2c3129549','732c15dc-6629-4266-8b5c-c3f123fb6b52','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595a1b4-0990-11ed-8cc5-959a7d01e157','ddb5edfe-6387-472a-beb8-da57e5ac9fe5','a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595a1b5-0990-11ed-8cc5-959a7d01e157','50416b91-65bb-4897-b248-7be2c3129549','a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595c8c0-0990-11ed-8cc5-959a7d01e157','5f4bb49b-7d91-4d2d-a757-5a448a84a7d8','a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00'),('8595c8c1-0990-11ed-8cc5-959a7d01e157','62c2e6b5-26d9-4ada-891f-e95ab59346ba','a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1','2022-07-22 07:33:03.946 +00:00','2022-07-22 07:33:03.946 +00:00');
+Authorship.bulkCreate : 
+[
+  Authorship {
+    dataValues: {
+      authorship_id: '85957aa0-0990-11ed-8cc5-959a7d01e157',
+      author_id: '6195cab5-3964-49ce-b7ef-ef48a180dd7c',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '6195cab5-3964-49ce-b7ef-ef48a180dd7c',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      authorship_id: '85957aa0-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '85957aa1-0990-11ed-8cc5-959a7d01e157',
+      author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      authorship_id: '85957aa1-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '85957aa2-0990-11ed-8cc5-959a7d01e157',
+      author_id: 'fb6c4dce-c58e-405b-ace0-718efab1b6a7',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: 'fb6c4dce-c58e-405b-ace0-718efab1b6a7',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      authorship_id: '85957aa2-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595a1b0-0990-11ed-8cc5-959a7d01e157',
+      author_id: '32b2eca7-6f1e-4ba5-b99e-f2e5bbb80ae0',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '32b2eca7-6f1e-4ba5-b99e-f2e5bbb80ae0',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      authorship_id: '8595a1b0-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595a1b1-0990-11ed-8cc5-959a7d01e157',
+      author_id: '7dbdacee-0bf3-4f10-9364-55c77c322dce',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '7dbdacee-0bf3-4f10-9364-55c77c322dce',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      authorship_id: '8595a1b1-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595a1b2-0990-11ed-8cc5-959a7d01e157',
+      author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+      book_id: 'a6b3a76c-e605-49c1-b76c-aa7ecc645aed',
+      authorship_id: '8595a1b2-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595a1b3-0990-11ed-8cc5-959a7d01e157',
+      author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+      book_id: '732c15dc-6629-4266-8b5c-c3f123fb6b52',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+      book_id: '732c15dc-6629-4266-8b5c-c3f123fb6b52',
+      authorship_id: '8595a1b3-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595a1b4-0990-11ed-8cc5-959a7d01e157',
+      author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: 'ddb5edfe-6387-472a-beb8-da57e5ac9fe5',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      authorship_id: '8595a1b4-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595a1b5-0990-11ed-8cc5-959a7d01e157',
+      author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '50416b91-65bb-4897-b248-7be2c3129549',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      authorship_id: '8595a1b5-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595c8c0-0990-11ed-8cc5-959a7d01e157',
+      author_id: '5f4bb49b-7d91-4d2d-a757-5a448a84a7d8',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '5f4bb49b-7d91-4d2d-a757-5a448a84a7d8',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      authorship_id: '8595c8c0-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Authorship {
+    dataValues: {
+      authorship_id: '8595c8c1-0990-11ed-8cc5-959a7d01e157',
+      author_id: '62c2e6b5-26d9-4ada-891f-e95ab59346ba',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z
+    },
+    _previousDataValues: {
+      author_id: '62c2e6b5-26d9-4ada-891f-e95ab59346ba',
+      book_id: 'a9a5d360-23e4-4bdf-a4d2-b91b2d7c4cb1',
+      authorship_id: '8595c8c1-0990-11ed-8cc5-959a7d01e157',
+      createdAt: 2022-07-22T07:33:03.946Z,
+      updatedAt: 2022-07-22T07:33:03.946Z,
+      deletedAt: undefined,
+      AuthorAuthorId: undefined,
+      BookBookId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  }
+]
+Executing (default): select count(*) from authorships;
+[{"count(*)":11}]

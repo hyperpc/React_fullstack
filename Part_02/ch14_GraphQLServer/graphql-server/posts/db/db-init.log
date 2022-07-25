@@ -1,0 +1,599 @@
+Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='users';
+Executing (default): CREATE TABLE IF NOT EXISTS `users` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `user_id` INTEGER NOT NULL, `name` TEXT NOT NULL DEFAULT '', `about` TEXT, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `deletedAt` DATETIME);
+Executing (default): PRAGMA INDEX_LIST(`users`)
+Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='usersFriends';
+Executing (default): CREATE TABLE IF NOT EXISTS `usersFriends` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `user_id` INTEGER NOT NULL, `friend_user_id` INTEGER NOT NULL, `level` INTEGER NOT NULL, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `deletedAt` DATETIME, `UserId` INTEGER REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE);
+Executing (default): PRAGMA INDEX_LIST(`usersFriends`)
+Executing (default): SELECT name FROM sqlite_master WHERE type='table' AND name='posts';
+Executing (default): CREATE TABLE IF NOT EXISTS `posts` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `postId` INTEGER NOT NULL, `user_id` INTEGER NOT NULL, `body` TEXT NOT NULL, `level` INTEGER NOT NULL, `created_at` DATETIME, `createdAt` DATETIME NOT NULL, `updatedAt` DATETIME NOT NULL, `deletedAt` DATETIME, `UserId` INTEGER REFERENCES `users` (`id`) ON DELETE SET NULL ON UPDATE CASCADE);
+Executing (default): PRAGMA INDEX_LIST(`posts`)
+Executing (default): delete from users;
+Executing (default): INSERT INTO `users` (`id`,`user_id`,`name`,`about`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5);
+User {
+  dataValues: {
+    id: 1,
+    user_id: 1,
+    name: 'Harry',
+    about: 'Sport!',
+    updatedAt: 2022-07-12T09:13:41.831Z,
+    createdAt: 2022-07-12T09:13:41.831Z
+  },
+  _previousDataValues: {
+    user_id: 1,
+    name: 'Harry',
+    about: 'Sport!',
+    id: 1,
+    createdAt: 2022-07-12T09:13:41.831Z,
+    updatedAt: 2022-07-12T09:13:41.831Z,
+    deletedAt: undefined
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: { isNewRecord: true, _schema: null, _schemaDelimiter: '' },
+  isNewRecord: false
+}
+Executing (default): INSERT INTO `users` (`id`,`user_id`,`name`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4);
+Executing (default): UPDATE `users` SET `about`=$1,`updatedAt`=$2 WHERE `id` = $3
+User {
+  dataValues: {
+    id: 2,
+    user_id: 2,
+    name: 'David',
+    updatedAt: 2022-07-12T09:13:41.881Z,
+    createdAt: 2022-07-12T09:13:41.861Z,
+    about: "I'm the best"
+  },
+  _previousDataValues: {
+    user_id: 2,
+    name: 'David',
+    id: 2,
+    about: "I'm the best",
+    createdAt: 2022-07-12T09:13:41.861Z,
+    updatedAt: 2022-07-12T09:13:41.881Z,
+    deletedAt: undefined
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: true,
+    _schema: null,
+    _schemaDelimiter: '',
+    attributes: undefined,
+    include: undefined,
+    raw: undefined,
+    silent: undefined
+  },
+  isNewRecord: false
+}
+Executing (default): INSERT INTO `users` (`id`,`user_id`,`name`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4);
+Executing (default): UPDATE `users` SET `name`=$1,`about`=$2,`updatedAt`=$3 WHERE `id` = $4
+User {
+  dataValues: {
+    name: 'Hannah',
+    id: 3,
+    user_id: 3,
+    updatedAt: 2022-07-12T09:13:41.922Z,
+    createdAt: 2022-07-12T09:13:41.903Z,
+    about: 'Love books'
+  },
+  _previousDataValues: {
+    user_id: 3,
+    id: 3,
+    name: 'Hannah',
+    about: 'Love books',
+    createdAt: 2022-07-12T09:13:41.903Z,
+    updatedAt: 2022-07-12T09:13:41.922Z,
+    deletedAt: undefined
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: true,
+    _schema: null,
+    _schemaDelimiter: '',
+    attributes: undefined,
+    include: undefined,
+    raw: undefined,
+    silent: undefined
+  },
+  isNewRecord: false
+}
+Executing (default): INSERT INTO `users` (`id`,`user_id`,`name`,`about`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5);
+Executing (default): UPDATE `users` SET `about`=$1,`updatedAt`=$2 WHERE `id` = $3
+Executing (default): UPDATE `users` SET `about`=$1,`updatedAt`=$2 WHERE `id` = $3
+User {
+  dataValues: {
+    id: 4,
+    user_id: 4,
+    name: 'Roger',
+    about: '[updated] Here for a good time',
+    updatedAt: 2022-07-12T09:13:41.961Z,
+    createdAt: 2022-07-12T09:13:41.942Z
+  },
+  _previousDataValues: {
+    user_id: 4,
+    name: 'Roger',
+    about: '[updated] Here for a good time',
+    id: 4,
+    createdAt: 2022-07-12T09:13:41.942Z,
+    updatedAt: 2022-07-12T09:13:41.961Z,
+    deletedAt: undefined
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: true,
+    _schema: null,
+    _schemaDelimiter: '',
+    attributes: undefined,
+    include: undefined,
+    raw: undefined,
+    silent: undefined
+  },
+  isNewRecord: false
+}
+Executing (default): INSERT INTO `users` (`id`,`user_id`,`name`,`about`,`createdAt`,`updatedAt`) VALUES (NULL,$1,$2,$3,$4,$5);
+User {
+  dataValues: {
+    id: 5,
+    user_id: 5,
+    name: 'Katie',
+    about: 'Better at sports than Harry',
+    updatedAt: 2022-07-12T09:13:41.982Z,
+    createdAt: 2022-07-12T09:13:41.982Z
+  },
+  _previousDataValues: {
+    user_id: 5,
+    name: 'Katie',
+    about: 'Better at sports than Harry',
+    id: 5,
+    createdAt: 2022-07-12T09:13:41.982Z,
+    updatedAt: 2022-07-12T09:13:41.982Z,
+    deletedAt: undefined
+  },
+  uniqno: 1,
+  _changed: Set(0) {},
+  _options: {
+    isNewRecord: true,
+    _schema: null,
+    _schemaDelimiter: '',
+    attributes: undefined,
+    include: undefined,
+    raw: undefined,
+    silent: undefined
+  },
+  isNewRecord: false
+}
+Executing (default): delete from usersFriends;
+Executing (default): INSERT INTO `usersFriends` (`id`,`user_id`,`friend_user_id`,`level`,`createdAt`,`updatedAt`) VALUES (NULL,1,3,3,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,3,1,3,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,3,4,3,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,4,3,3,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,1,5,2,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,5,1,2,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,2,5,2,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,5,2,2,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,2,4,1,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00'),(NULL,4,2,1,'2022-07-12 09:13:42.002 +00:00','2022-07-12 09:13:42.002 +00:00');
+Friendship.bulkCreate : 
+[
+  Friendship {
+    dataValues: {
+      id: 1,
+      user_id: 1,
+      friend_user_id: 3,
+      level: 3,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 1,
+      friend_user_id: 3,
+      level: 3,
+      id: 1,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 2,
+      user_id: 3,
+      friend_user_id: 1,
+      level: 3,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 3,
+      friend_user_id: 1,
+      level: 3,
+      id: 2,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 3,
+      user_id: 3,
+      friend_user_id: 4,
+      level: 3,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 3,
+      friend_user_id: 4,
+      level: 3,
+      id: 3,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 4,
+      user_id: 4,
+      friend_user_id: 3,
+      level: 3,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 4,
+      friend_user_id: 3,
+      level: 3,
+      id: 4,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 5,
+      user_id: 1,
+      friend_user_id: 5,
+      level: 2,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 1,
+      friend_user_id: 5,
+      level: 2,
+      id: 5,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 6,
+      user_id: 5,
+      friend_user_id: 1,
+      level: 2,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 5,
+      friend_user_id: 1,
+      level: 2,
+      id: 6,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 7,
+      user_id: 2,
+      friend_user_id: 5,
+      level: 2,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 2,
+      friend_user_id: 5,
+      level: 2,
+      id: 7,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 8,
+      user_id: 5,
+      friend_user_id: 2,
+      level: 2,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 5,
+      friend_user_id: 2,
+      level: 2,
+      id: 8,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 9,
+      user_id: 2,
+      friend_user_id: 4,
+      level: 1,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 2,
+      friend_user_id: 4,
+      level: 1,
+      id: 9,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Friendship {
+    dataValues: {
+      id: 10,
+      user_id: 4,
+      friend_user_id: 2,
+      level: 1,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z
+    },
+    _previousDataValues: {
+      user_id: 4,
+      friend_user_id: 2,
+      level: 1,
+      id: 10,
+      createdAt: 2022-07-12T09:13:42.002Z,
+      updatedAt: 2022-07-12T09:13:42.002Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  }
+]
+Executing (default): INSERT INTO `posts` (`id`,`postId`,`user_id`,`body`,`level`,`created_at`,`createdAt`,`updatedAt`) VALUES (NULL,1,1,'The team played a great game today!',1,'2016-04-01 00:00:00.000 +00:00','2022-07-12 09:13:42.027 +00:00','2022-07-12 09:13:42.027 +00:00'),(NULL,2,1,'Honestly I didn''t do so well at yesterday''s game, but everyone else did.',3,'2016-04-02 00:00:00.000 +00:00','2022-07-12 09:13:42.027 +00:00','2022-07-12 09:13:42.027 +00:00'),(NULL,3,2,'Hard at work studying for finals...',2,'2016-04-03 00:00:00.000 +00:00','2022-07-12 09:13:42.027 +00:00','2022-07-12 09:13:42.027 +00:00'),(NULL,4,3,'Excited for finals!',0,'2016-03-31 00:00:00.000 +00:00','2022-07-12 09:13:42.027 +00:00','2022-07-12 09:13:42.027 +00:00');
+Post.bulkCreate : 
+[
+  Post {
+    dataValues: {
+      id: 1,
+      postId: 1,
+      user_id: 1,
+      body: 'The team played a great game today!',
+      level: 1,
+      created_at: 2016-04-01T00:00:00.000Z,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z
+    },
+    _previousDataValues: {
+      postId: 1,
+      user_id: 1,
+      body: 'The team played a great game today!',
+      level: 1,
+      created_at: 2016-04-01T00:00:00.000Z,
+      id: 1,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Post {
+    dataValues: {
+      id: 2,
+      postId: 2,
+      user_id: 1,
+      body: "Honestly I didn't do so well at yesterday's game, but everyone else did.",
+      level: 3,
+      created_at: 2016-04-02T00:00:00.000Z,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z
+    },
+    _previousDataValues: {
+      postId: 2,
+      user_id: 1,
+      body: "Honestly I didn't do so well at yesterday's game, but everyone else did.",
+      level: 3,
+      created_at: 2016-04-02T00:00:00.000Z,
+      id: 2,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Post {
+    dataValues: {
+      id: 3,
+      postId: 3,
+      user_id: 2,
+      body: 'Hard at work studying for finals...',
+      level: 2,
+      created_at: 2016-04-03T00:00:00.000Z,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z
+    },
+    _previousDataValues: {
+      postId: 3,
+      user_id: 2,
+      body: 'Hard at work studying for finals...',
+      level: 2,
+      created_at: 2016-04-03T00:00:00.000Z,
+      id: 3,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  },
+  Post {
+    dataValues: {
+      id: 4,
+      postId: 4,
+      user_id: 3,
+      body: 'Excited for finals!',
+      level: 0,
+      created_at: 2016-03-31T00:00:00.000Z,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z
+    },
+    _previousDataValues: {
+      postId: 4,
+      user_id: 3,
+      body: 'Excited for finals!',
+      level: 0,
+      created_at: 2016-03-31T00:00:00.000Z,
+      id: 4,
+      createdAt: 2022-07-12T09:13:42.027Z,
+      updatedAt: 2022-07-12T09:13:42.027Z,
+      deletedAt: undefined,
+      UserId: undefined
+    },
+    uniqno: 1,
+    _changed: Set(0) {},
+    _options: {
+      isNewRecord: true,
+      _schema: null,
+      _schemaDelimiter: '',
+      include: undefined
+    },
+    isNewRecord: false
+  }
+]
+Executing (default): select count(*) from users;
+[{"count(*)":5}]

@@ -126,7 +126,7 @@ React通过上下文的Provider组件传递上下文内容给React树，通过Pr
 
 如果项目中定义了多个上下文组件，React也支持在一个子组件中同时访问多个上下文内容  
 /context-theme/context/AppUser.js的例子，演示了多个上下文的使用  
-但是，如果多个上下文经常同时使用，最好创建一个新的组件来实现同样的功能。React建议一个上下文队医一个树节点，以保持DONM渲染的效率  
+但是，如果多个上下文经常同时使用，最好创建一个新的组件来实现同样的功能。React建议一个上下文对应一个树节点，以保持DOM渲染的效率  
 这一节参考了官方的文档和示例，点[这里](https://reactjs.org/docs/context.html)查看更多  
 
 注意，在访问多个上下文时，React只能访问包裹(Consumer)的创建者(Provider)拥有的上下文  

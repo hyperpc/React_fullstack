@@ -1,0 +1,223 @@
+Executing (default): SELECT 1+1 AS result
+>> Connection has been established successfully.
+>> User.findOne(1)
+Executing (default): SELECT `id`, `user_id`, `name`, `about`, `createdAt`, `updatedAt`, `deletedAt` FROM `users` AS `User` WHERE (`User`.`deletedAt` IS NULL AND `User`.`user_id` = 1) LIMIT 1;
+{"id":1,"user_id":1,"name":"Harry","about":"Sport!","createdAt":"2022-07-12T09:13:41.831Z","updatedAt":"2022-07-12T09:13:41.831Z","deletedAt":null}
+{
+  id: 1,
+  user_id: 1,
+  name: 'Harry',
+  about: 'Sport!',
+  createdAt: 2022-07-12T09:13:41.831Z,
+  updatedAt: 2022-07-12T09:13:41.831Z,
+  deletedAt: null
+}
+Harry
+>> User.findAll()
+Executing (default): SELECT `id`, `user_id`, `name`, `about`, `createdAt`, `updatedAt`, `deletedAt` FROM `users` AS `User` WHERE (`User`.`deletedAt` IS NULL);
+{
+  id: 1,
+  user_id: 1,
+  name: 'Harry',
+  about: 'Sport!',
+  createdAt: 2022-07-12T09:13:41.831Z,
+  updatedAt: 2022-07-12T09:13:41.831Z,
+  deletedAt: null
+}
+Harry
+{
+  id: 2,
+  user_id: 2,
+  name: 'David',
+  about: "I'm the best",
+  createdAt: 2022-07-12T09:13:41.861Z,
+  updatedAt: 2022-07-12T09:13:41.881Z,
+  deletedAt: null
+}
+David
+{
+  id: 3,
+  user_id: 3,
+  name: 'Hannah',
+  about: 'Love books',
+  createdAt: 2022-07-12T09:13:41.903Z,
+  updatedAt: 2022-07-12T09:13:41.922Z,
+  deletedAt: null
+}
+Hannah
+{
+  id: 4,
+  user_id: 4,
+  name: 'Roger',
+  about: '[updated] Here for a good time',
+  createdAt: 2022-07-12T09:13:41.942Z,
+  updatedAt: 2022-07-12T09:13:41.961Z,
+  deletedAt: null
+}
+Roger
+{
+  id: 5,
+  user_id: 5,
+  name: 'Katie',
+  about: 'Better at sports than Harry',
+  createdAt: 2022-07-12T09:13:41.982Z,
+  updatedAt: 2022-07-12T09:13:41.982Z,
+  deletedAt: null
+}
+Katie
+>> Friendship.findAll()
+Executing (default): SELECT `id`, `user_id`, `friend_user_id`, `level`, `createdAt`, `updatedAt`, `deletedAt` FROM `usersFriends` AS `Friendship` WHERE (`Friendship`.`deletedAt` IS NULL);
+{
+  id: 1,
+  user_id: 1,
+  friend_user_id: 3,
+  level: 3,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+3
+{
+  id: 2,
+  user_id: 3,
+  friend_user_id: 1,
+  level: 3,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+3
+{
+  id: 3,
+  user_id: 3,
+  friend_user_id: 4,
+  level: 3,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+3
+{
+  id: 4,
+  user_id: 4,
+  friend_user_id: 3,
+  level: 3,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+3
+{
+  id: 5,
+  user_id: 1,
+  friend_user_id: 5,
+  level: 2,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+2
+{
+  id: 6,
+  user_id: 5,
+  friend_user_id: 1,
+  level: 2,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+2
+{
+  id: 7,
+  user_id: 2,
+  friend_user_id: 5,
+  level: 2,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+2
+{
+  id: 8,
+  user_id: 5,
+  friend_user_id: 2,
+  level: 2,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+2
+{
+  id: 9,
+  user_id: 2,
+  friend_user_id: 4,
+  level: 1,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+1
+{
+  id: 10,
+  user_id: 4,
+  friend_user_id: 2,
+  level: 1,
+  createdAt: 2022-07-12T09:13:42.002Z,
+  updatedAt: 2022-07-12T09:13:42.002Z,
+  deletedAt: null
+}
+1
+>> Post.findAll()
+Executing (default): SELECT `id`, `postId`, `user_id`, `body`, `level`, `created_at`, `createdAt`, `updatedAt`, `deletedAt` FROM `posts` AS `Post` WHERE (`Post`.`deletedAt` IS NULL);
+{
+  id: 1,
+  postId: 1,
+  user_id: 1,
+  body: 'The team played a great game today!',
+  level: 1,
+  created_at: 2016-04-01T00:00:00.000Z,
+  createdAt: 2022-07-12T09:13:42.027Z,
+  updatedAt: 2022-07-12T09:13:42.027Z,
+  deletedAt: null
+}
+The team played a great game today!
+01/04/2016
+{
+  id: 2,
+  postId: 2,
+  user_id: 1,
+  body: "Honestly I didn't do so well at yesterday's game, but everyone else did.",
+  level: 3,
+  created_at: 2016-04-02T00:00:00.000Z,
+  createdAt: 2022-07-12T09:13:42.027Z,
+  updatedAt: 2022-07-12T09:13:42.027Z,
+  deletedAt: null
+}
+Honestly I didn't do so well at yesterday's game, but everyone else did.
+02/04/2016
+{
+  id: 3,
+  postId: 3,
+  user_id: 2,
+  body: 'Hard at work studying for finals...',
+  level: 2,
+  created_at: 2016-04-03T00:00:00.000Z,
+  createdAt: 2022-07-12T09:13:42.027Z,
+  updatedAt: 2022-07-12T09:13:42.027Z,
+  deletedAt: null
+}
+Hard at work studying for finals...
+03/04/2016
+{
+  id: 4,
+  postId: 4,
+  user_id: 3,
+  body: 'Excited for finals!',
+  level: 0,
+  created_at: 2016-03-31T00:00:00.000Z,
+  createdAt: 2022-07-12T09:13:42.027Z,
+  updatedAt: 2022-07-12T09:13:42.027Z,
+  deletedAt: null
+}
+Excited for finals!
+31/03/2016

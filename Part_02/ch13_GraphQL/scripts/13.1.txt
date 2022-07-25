@@ -1,0 +1,14 @@
+# request
+curl - H 'Content-Type:application/graphql' -XPOST https://www.graphqlhub.com/graphql?pretty=true-d '{ hn { topStories(limit:2) {title url}}}'
+
+# response
+{
+    "data":{
+        "hn":{
+            "topStories":[{
+                "title":"Dropbox as a Git Server",
+                "url":"http://www.anishathalye.com/2016/04/25/dropbox-as-a-true-git-server/"
+            }]
+        }
+    }
+}
